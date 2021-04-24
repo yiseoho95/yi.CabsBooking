@@ -26,13 +26,3 @@ namespace Infrastructure.Repositories
     }
 }
 
-/*
- *
- * public override async Task<Cast> GetByIdAsync(int id)
-        {
-            var cast = await _dbContext.Casts.Where(c => c.Id == id).Include(c => c.MovieCasts)
-                .ThenInclude(c => c.Movie).FirstOrDefaultAsync();
-
-            return cast;
-        }
- */

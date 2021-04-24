@@ -46,6 +46,8 @@ namespace yi.CabsBooking.API
             services.AddScoped<IAsyncRepository<CabTypes>, CabRepository>();
 
             services.AddScoped<IAsyncRepository<Places>, EfRepository<Places>>();
+            services.AddScoped<IAsyncRepository<Places>, PlacesRepository>();
+            services.AddScoped<IPlacesService, PlacesService>();
 
 
             //services.AddScoped<IAsyncRepository<CabTypes>, EfRepository<CabTypes>>();

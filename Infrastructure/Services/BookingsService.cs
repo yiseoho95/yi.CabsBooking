@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ApplicationCore.RepositoryInterfaces;
+using ApplicationCore.ServiceInterfaces;
 
 namespace Infrastructure.Services
 {
-    class BookingsService
+    public class BookingsService : IBookingsService 
     {
+        
+
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApplicationCore.Models.Request;
 using ApplicationCore.ServiceInterfaces;
 
 namespace yi.CabsBooking.API.Controllers
@@ -33,6 +34,30 @@ namespace yi.CabsBooking.API.Controllers
         {
             var cabs = await _cabTypesService.GetCabTypesWithBookings(id);
             return Ok(cabs);
+        }
+
+        [HttpPost]
+        [Route("createCab")]
+        public async Task<IActionResult> CreateCab(CabTypesRegisterRequestModel model)
+        {
+            var cab = await _cabTypesService.CreateCab(model);
+            return Ok(cab);
+        }
+
+        [HttpPut]
+        [Route("updateCab")]
+        public async Task<IActionResult> UpdateCab(UpdateCabTypeRequestModel model)
+        {
+            var updatedCab = await _cabTypesService.UpdateCab(model);
+            return Ok(updatedCab);
+        }
+
+        [HttpDelete]
+        [Route("{id:int}", Name = "DeleteUser")]
+        public async Task<IActionResult> DeleteCab(int id)
+        {
+            var cab = await _cabTypesService.DeleteCab(id);
+            return Ok(cab);
         }
     }
 }
