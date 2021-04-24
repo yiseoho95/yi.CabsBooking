@@ -1,0 +1,39 @@
+<!-- <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cabType of cabtypes">
+            <th scope="row">{{cabType.Id}}</th>
+            <td>{{cabType.Name}}
+                <a [routerLink] = "['CabTypes', cabType.Id]">
+                    {{cabType.Name}}</a>
+            </td>
+
+        </tr>
+    </tbody>
+
+</table> -->
+
+<div>
+    <h1>Cabs For Rent</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cabType of cabtypes">
+          <td>{{ cabType.id }}</td>
+          <td>
+            <a [routerLink]="['CabTypes/', cabType.id]">{{ cabType.name}} </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,42 @@
+<div>
+    <h1>CabsBooking Details</h1>
+  </div>
+  <hr />
+  <div>
+    <div class="col-4 cabfacts">
+      <h3>Cab Booking History</h3>
+      <hr />
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          CabType Id: {{ cabtypes?.id }}
+        </li>
+        <li class="list-group-item">
+          CabType Name: {{ cabtypes?.name }}
+        </li>
+      </ul>
+    </div>
+    <hr />
+    <div class="col-6 cabfacts">
+      <h3>Bookings History</h3>
+      <hr />
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">BookingId</th>
+            <th scope="col">Email</th>
+            <th scope="col">Pickup</th>
+            <th scope="col">Destination</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let booking of cabtypes?.bookings">
+            <td>{{ booking.id }}</td>
+            <td>{{ booking.email }}</td>
+            <td>{{ booking.fromPlace }}</td>
+            <td>{{ booking.toPlace }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr />
+  </div>
