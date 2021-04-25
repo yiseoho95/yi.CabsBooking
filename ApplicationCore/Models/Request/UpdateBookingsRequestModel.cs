@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using ApplicationCore.Entities;
 
 namespace ApplicationCore.Models.Request
 {
-    public class BookingsHistoryRegisterRequestModel
+    public class UpdateBookingsRequestModel
     {
+        public int Id { get; set; }
         public string Email { get; set; }
         public DateTime BookingDate { get; set; }
         public string BookingTime { get; set; }
@@ -19,10 +19,5 @@ namespace ApplicationCore.Models.Request
         public int CabTypeId { get; set; }
         public string ContactNo { get; set; }
         public string Status { get; set; }
-        public string Comp_Time { get; set; }
-        public decimal Charge { get; set; }
-        public string Feedback { get; set; }
-
-
     }
 }

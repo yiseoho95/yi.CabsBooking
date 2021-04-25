@@ -16,13 +16,6 @@ namespace ApplicationCore.ServiceInterfaces
         Task<BookingsHistory> GetHistory(int id);
         Task<BookingsHistoriesResponseModel> DeleteHistory(int id);
 
-        /*
-         *
-        Task<PlacesResponseModel> UpdatePlace(UpdatePlacesRequestModel updateRequestModel);
-        Task<Places> GetPlace(int id);
-        Task<PlacesResponseModel> DeletePlace(int id);
-
-         *
-         */
+   
     }
 }

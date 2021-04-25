@@ -125,9 +125,52 @@ namespace Infrastructure.Services
             throw new NotImplementedException();
         }
 
-        public Task<BookingsHistoriesResponseModel> UpdateHistory(UpdateBookingsHistoryRequestModel updateRequestModel)
+        public async Task<BookingsHistoriesResponseModel> UpdateHistory(UpdateBookingsHistoryRequestModel updateRequestModel)
         {
-            throw new NotImplementedException();
+            var history = new BookingsHistory
+            {
+                Id = updateRequestModel.Id,
+                Email = updateRequestModel.Email,
+                BookingDate = updateRequestModel.BookingDate,
+                BookingTime = updateRequestModel.BookingTime,
+                FromPlace = updateRequestModel.FromPlace,
+                ToPlace = updateRequestModel.ToPlace,
+                PickupAddress = updateRequestModel.PickupAddress,
+                Landmark = updateRequestModel.Landmark,
+                PickupDate = updateRequestModel.PickupDate,
+                PickupTime = updateRequestModel.PickupTime,
+                CabTypeId = updateRequestModel.CabTypeId,
+                ContactNo = updateRequestModel.ContactNo,
+                Status = updateRequestModel.Status,
+                Comp_Time = updateRequestModel.Comp_Time,
+                Charge = updateRequestModel.Charge,
+                Feedback = updateRequestModel.Feedback
+            };
+
+            var updatedHistory = await _bookingsHistory.UpdateAsync(history);
+
+            var updatedHistoriesResponseModel = new BookingsHistoriesResponseModel()
+            {
+                Id = updatedHistory.Id,
+                Email = updatedHistory.Email,
+                BookingDate = updatedHistory.BookingDate,
+                BookingTime = updatedHistory.BookingTime,
+                FromPlace = updatedHistory.FromPlace,
+                ToPlace = updatedHistory.ToPlace,
+                PickupAddress = updatedHistory.PickupAddress,
+                Landmark = updatedHistory.Landmark,
+                PickupDate = updatedHistory.PickupDate,
+                PickupTime = updatedHistory.PickupTime,
+                CabTypeId = updatedHistory.CabTypeId,
+                ContactNo = updatedHistory.ContactNo,
+                Status = updatedHistory.Status,
+                Comp_Time = updatedHistory.Comp_Time,
+                Charge = updatedHistory.Charge,
+                Feedback = updatedHistory.Feedback
+            };
+
+            return updatedHistoriesResponseModel;
         }
+        
     }
 }
